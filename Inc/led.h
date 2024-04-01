@@ -26,7 +26,9 @@ class Led{
 		LedState_Type state;
 	public:
 		Led(LedState_Type state);
+		void setState(LedState_Type state);
+		LedState_Type getState();
 };
-
+void delay (int delay);
 
 #endif /* LED_H_ */

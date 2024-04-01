@@ -30,3 +30,27 @@ Led::Led(LedState_Type _state)
 		GPIOA->ODR &= ~(0x01 << 5);
 	}
 }
+
+void Led::setState(LedState_Type _state){
+	this->state = _state;
+
+	if(this->state  == ON){
+		GPIOA->ODR |= (0x01 << 5);
+	}
+	else{
+		GPIOA->ODR &= ~(0x01 << 5);
+	}
+}
+
+LedState_Type Led::getState(void){
+	return this->state;
+}
+
+void delay (int delay)
+{
+	int i;
+	for(;delay>0; delay --){
+		for (i=0; i<1000;i++);
+	}
+  return;
+}
